@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="content__search search">
+        <form name="search-users" class="search__form form">
+          <input
+            class="form__input"
+            type="text"
+            name="username"
+            placeholder="Enter user name"
+            minlength="3"
+            required
+          />
+          <button class="form__button" type="submit">Search</button>
+        </form>
+        <ul class="search__list list" id="usersList">
+          <li class="list__item">
+            <div class="card" href="https://api.github.com/users/abs">
+              <img class="card__img" src="https://avatars.githubusercontent.com/u/41166?v=4" alt="abs">
+              <p class="card__name">abs</p>
+            </div>
+          </li>
+          <li class="list__item">
+            <div class="card" href="https://api.github.com/users/Absolucy">
+              <img class="card__img" src="https://avatars.githubusercontent.com/u/65794972?v=4" alt="Absolucy">
+              <p class="card__name">Absolucy</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="./scripts/index.js" type="module"></script>
+  </body>
+</html>
