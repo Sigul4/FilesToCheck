@@ -12,6 +12,9 @@ const {searchUsers} = api;
 
 const searchUsersForm = document.forms['search-users'];
 
+const card_popup = document.querySelector('div.card')
+card_popup.addEventListener("click", viewPersonalCard())
+
 searchUsersForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
