@@ -19,6 +19,15 @@
   background-color: #ccccccb3;
 }
 
+.card.expanded {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top: 10%;
+  height: 80%;
+  flex-direction: column;
+  background-color: white;
+}
 .card__img {
   margin: 20px;
   width: 70px;
