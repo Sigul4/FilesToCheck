@@ -6,14 +6,24 @@
  */
 import api from './api/index.js';
 import addCardToList from './utils/addCardToList.js';
-import viewPersonalCard from './utils/viewPersonalCard.js';
+import {viewPersonalCard, hidePersonalCard} from './utils/changePersonalCard.js';
 
 const {searchUsers} = api;
 
 const searchUsersForm = document.forms['search-users'];
 
 const card_popup = document.querySelector('div.card')
-card_popup.addEventListener("click", viewPersonalCard())
+
+const html = document.querySelector('html')
+
+viewPersonalCard()
+
+card_popup.addEventListener("click", (e) => {
+  e.stopPropagation()
+  viewPersonalCard()
+})
+html.addEventListener("click", () => {hidePersonalCard()})
+
 
 searchUsersForm.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -28,5 +38,3 @@ searchUsersForm.addEventListener('submit', async (event) => {
 
   addCardToList(users);
 });
-
-

@@ -15,5 +15,18 @@ const viewPersonalCard = () => {
     card__name.style.fontSize = "50px"
 }
 
+const hidePersonalCard = () => {   
+    card_popup.style.position = ""
+    card_popup.style.width = ""
+    card_popup.style.left = ""
+    card_popup.style.top = ""  
+    card_popup.style.height = ""  
+    card_popup.style.flexDirection = ""  
+    card_popup.style.backgroundColor = ""  
+    card__img.style.width = ""  
+    card__img.style.height = ""
+    card__name.style.fontSize = ""
+}
 
-export default viewPersonalCard
+
+export {viewPersonalCard, hidePersonalCard}
