@@ -12,18 +12,24 @@ const {searchUsers} = api;
 
 const searchUsersForm = document.forms['search-users'];
 
-const card_popup = document.querySelector('div.card')
+// you have to get all cards
+const cards = document.querySelectorAll('div.card');
 
-const html = document.querySelector('html')
+// // better to add events to <body>
+// const body = document.querySelector('body');
 
-viewPersonalCard()
+// add event listener to all cards
+cards.forEach((card) =>
+  card.addEventListener('click', (e) => {
+    e.stopPropagation();
+    hidePersonalCard();
+    viewPersonalCard(e.currentTarget);
+  })
+);
 
-card_popup.addEventListener("click", (e) => {
-  e.stopPropagation()
-  viewPersonalCard()
-})
-html.addEventListener("click", () => {hidePersonalCard()})
-
+document.body.addEventListener('click', () => {
+  hidePersonalCard();
+});
 
 searchUsersForm.addEventListener('submit', async (event) => {
   event.preventDefault();
